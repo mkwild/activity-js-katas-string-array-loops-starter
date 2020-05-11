@@ -15,3 +15,26 @@
 */
 
 // YOUR CODE HERE
+const guessButton = document.querySelector("#guess-button")
+const guessInput = document.querySelector("#guess-input")
+const output = document.querySelector("#output")
+let word = "wyoming"
+let letter
+
+guessButton.addEventListener('click', function() {
+   let index = 0
+   let count = 0
+   letter = guessInput.value.trim().toLowerCase()
+   while (index < word.length) {
+      if(letter == word[index]) {
+         count++
+      }
+      index++
+   }
+   if(count > 0) {
+      output.innerText = `The letter ${letter} exists ${count} times in my word!`
+   }
+   else {
+      output.innerText = `Nope, the letter ${letter} does not exist in my word!`
+   }
+})
