@@ -9,3 +9,18 @@
 */
 
 // YOUR CODE HERE
+const checkButton = document.querySelector("#check")
+const display = document.querySelector("#tallest")
+let mountainHeights = [1000, 1250, 15000, 2900, 17500, 12000]
+
+checkButton.addEventListener('click', function() {
+   let index = 0
+   let tallest = 0
+   while(index < mountainHeights.length) {
+      if(mountainHeights[index]>tallest) {
+         tallest = mountainHeights[index]
+      }
+      index++
+   }
+   display.innerText = tallest
+})
